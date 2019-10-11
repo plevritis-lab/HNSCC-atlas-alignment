@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+### Zinaida Good 11 Nov 2018
+### Based on the 10X Genomics slurm template example.
+#
+#SBATCH -J __MRO_JOB_NAME__
+#SBATCH --export=ALL
+#SBATCH --signal=2
+#SBATCH --wait
+#SBATCH --requeue
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=__MRO_THREADS__
+#SBATCH --output=slurm.out
+#SBATCH --mem=__MRO_MEM_GB__G
+#SBATCH -o __MRO_STDOUT__
+#SBATCH -e __MRO_STDERR__
+#SBATCH -p normal
+
+__MRO_CMD__
